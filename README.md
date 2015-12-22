@@ -1,2 +1,2 @@
 # apiNG-plugin-dailymotion
-Dailymotion Plugin for apiNG
+Dailymotion Plugin for [apiNG](https://github.com/JohnnyTheTank/apiNG)

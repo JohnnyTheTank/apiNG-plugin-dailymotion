@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dailymotion Demo</title>
+
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="../bower_components/apiNG/dist/aping.min.js"></script>
+    <script src="aping-config.js"></script>
+    <script src="app.js"></script>
+    <script src="../bower_components/angular-dailymotion-api-factory/src/angular-dailymotion-api-factory.js"></script>
+    <script src="../src/aping-dailymotion-directive.js"></script>
+    <script src="../src/aping-dailymotion-helper.js"></script>
+</head>
+<body ng-app="app">
+    <h1>{'userId':'Bishop-live'}</h1>
+    <aping model="video"
+           aping-dailymotion="[{'userId':'Bishop-live'}]">
+    </aping>
+    <hr>
+
+    <h1>{'channelId':'music', 'tags':'eminem'}</h1>
+    <aping model="video"
+           aping-dailymotion="[{'channelId':'music', 'tags':'eminem'}]">
+    </aping>
+    <hr>
+
+    <h1>{'playlistId':'x439f7_brtvofficial_br-highlights-september'}</h1>
+    <aping model="video"
+           aping-dailymotion="[{'playlistId':'x439f7_brtvofficial_br-highlights-september'}]">
+    </aping>
+    <hr>
+
+    <h1>{'search':'fcbayern'}</h1>
+    <aping model="video"
+           aping-dailymotion="[{'search':'fcbayern'}]">
+    </aping>
+    <hr>
+
+    <h1>{'tags':'munich,berlin'}</h1>
+    <aping model="video"
+           aping-dailymotion="[{'tags':'munich,berlin'}]">
+    </aping>
+    <hr>
+
+</body>
+</html>

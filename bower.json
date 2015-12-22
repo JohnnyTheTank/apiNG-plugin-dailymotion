@@ -1,0 +1,31 @@
+{
+  "name": "apiNG-plugin-dailymotion",
+  "homepage": "https://github.com/JohnnyTheTank/apiNG-plugin-dailymotion",
+  "authors": [
+    "Jonathan Hornung <jonathan.hornung@gmail.com>"
+  ],
+  "version": "0.1.0",
+  "description": "dailymotion plugin for apiNG",
+  "main": "dist/apiNG-plugin-dailymotion.min.js",
+  "moduleType": [],
+  "keywords": [
+    "aping",
+    "dailymotion",
+    "angularjs",
+    "rest",
+    "api",
+    "json"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "apiNG": "*",
+    "angular-dailymotion-api-factory": "*"
+  }
+}

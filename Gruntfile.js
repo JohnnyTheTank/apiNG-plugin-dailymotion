@@ -1,0 +1,40 @@
+module.exports = function(grunt) {
+
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+        uglify: {
+            js: {
+                files : {
+                    'dist/aping-plugin-dailymotion.min.js' : [
+                        'src/aping-dailymotion-directive.js',
+                        'src/aping-dailymotion-helper.js',
+                        'bower_components/angular-dailymotion-api-factory/src/angular-dailymotion-api-factory.js'
+                    ]
+                }
+            },
+            options: {
+                banner: '\n/*! <%= pkg.name %> v<%= pkg.version %> (<%= grunt.template.today("dd-mm-yyyy") %>) by <%= pkg.author %> */\n',
+            }
+        },
+        watch: {
+            minifiyJs: {
+                files: [
+                    'src/aping-dailymotion-directive.js',
+                    'src/aping-dailymotion-helper.js',
+                    'bower_components/angular-dailymotion-api-factory/src/angular-dailymotion-api-factory.js'
+                ],
+                tasks: ['uglify'],
+                options: {
+                    spawn: true,
+                }
+            }
+        }
+    });
+
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+
+    grunt.registerTask('default', ['watch']);
+
+};
+
