@@ -4,7 +4,7 @@
   "authors": [
     "Jonathan Hornung <jonathan.hornung@gmail.com>"
   ],
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "dailymotion plugin for apiNG",
   "main": "dist/apiNG-plugin-dailymotion.min.js",
   "moduleType": [],

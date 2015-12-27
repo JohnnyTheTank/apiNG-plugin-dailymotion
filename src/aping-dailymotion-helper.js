@@ -90,19 +90,20 @@ jjtApingDailymotion.service('apingDailymotionHelper', ['apingModels', 'apingTime
 
         //fill _item in videoObject
         $.extend(true, videoObject, {
-            "blog_name": _item['owner.screenname'] || undefined,
-            "blog_id":  _item['owner.id'] || undefined,
-            "blog_link": _item['owner.url'] || undefined,
-            "type": _item.item_type || _item.media_type || undefined,
-            "timestamp": _item.created_time * 1000,
-            "markup": _item.embed_html || undefined,
-            "post_url": _item.url,
-            "intern_id": _item.id,
-            "text": apingUtilityHelper.getTextFromHtml(_item.description),
-            "caption": _item.title,
-            "img_url": _item.thumbnail_url,
-            "likes": _item.bookmarks_total,
-            "comments": _item.comments_total,
+            blog_name: _item['owner.screenname'] || undefined,
+            blog_id:  _item['owner.id'] || undefined,
+            blog_link: _item['owner.url'] || undefined,
+            type: _item.item_type || _item.media_type || undefined,
+            timestamp: _item.created_time * 1000,
+            markup: _item.embed_html || undefined,
+            post_url: _item.url,
+            intern_id: _item.id,
+            text: apingUtilityHelper.getTextFromHtml(_item.description),
+            caption: _item.title,
+            img_url: _item.thumbnail_url,
+            likes: _item.bookmarks_total,
+            comments: _item.comments_total,
+            duration: _item.duration, // in seconds
         });
 
         videoObject.date_time = new Date(videoObject.timestamp);
