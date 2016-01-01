@@ -1,6 +1,6 @@
 {
   "name": "aping-plugin-dailymotion",
-  "version": "0.1.2",
+  "version": "0.6.0",
   "description": "dailymotion plugin for apiNG",
   "main": "Gruntfile.js",
   "scripts": {

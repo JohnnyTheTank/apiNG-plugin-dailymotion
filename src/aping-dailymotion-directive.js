@@ -31,9 +31,7 @@ var jjtApingDailymotion = angular.module("jtt_aping_dailymotion", ['jtt_dailymot
                     }
 
                     //create requestObject for api request call
-                    var requestObject = {
-                        sort : 'recent',
-                    };
+                    var requestObject = {};
 
                     if(typeof request.items !== "undefined") {
                         requestObject.limit = request.items;
@@ -66,6 +64,7 @@ var jjtApingDailymotion = angular.module("jtt_aping_dailymotion", ['jtt_dailymot
                     if(request.userId) {
 
                         requestObject.id = request.userId;
+                        requestObject.sort = 'recent';
 
                         if(typeof request.channelId !== "undefined") {
                             requestObject.channel = request.channelId;
@@ -80,6 +79,7 @@ var jjtApingDailymotion = angular.module("jtt_aping_dailymotion", ['jtt_dailymot
                     } else if (request.channelId) {
 
                         requestObject.id = request.channelId;
+                        requestObject.sort = 'recent';
 
                         dailymotionFactory.getVideosFromChannelById(requestObject)
                             .success(function (_data) {
@@ -90,6 +90,7 @@ var jjtApingDailymotion = angular.module("jtt_aping_dailymotion", ['jtt_dailymot
                     } else if (request.playlistId) {
 
                         requestObject.id = request.playlistId;
+                        requestObject.sort = 'recent';
 
                         dailymotionFactory.getVideosFromPlaylistById(requestObject)
                             .success(function (_data) {
