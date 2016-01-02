@@ -26,7 +26,7 @@ You can choose your preferred method of installation:
 ### b) Include files
 Include `apiNG-plugin-dailymotion.min.js` in your apiNG application
 ```html
-<script src="bower_components/apiNG-plugin-dailymotion/dist/apiNG-plugin-dailymotion.min.js"></script>
+<script src="bower_components/apiNG-plugin-dailymotion/dist/aping-plugin-dailymotion.min.js"></script>
 ```
 
 ### c) Add dependencies
