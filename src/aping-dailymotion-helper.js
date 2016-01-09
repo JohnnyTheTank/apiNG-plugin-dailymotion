@@ -1,30 +1,25 @@
 "use strict";
 
-/**
- @author Jonathan Hornung (https://github.com/JohnnyTheTank)
- @url https://github.com/JohnnyTheTank/apiNG-plugin-dailymotion
- @licence MIT
- */
-
 jjtApingDailymotion.service('apingDailymotionHelper', ['apingModels', 'apingTimeHelper', 'apingUtilityHelper', function (apingModels, apingTimeHelper, apingUtilityHelper) {
     this.getThisPlattformString = function () {
         return "dailymotion";
     };
 
-    this.getThisPlattformLink = function () {
+    this.getThisPlatformLink = function () {
         return "https://dailymotion.com/";
     };
 
     this.getObjectByJsonData = function (_data, _helperObject) {
+
         var requestResults = [];
         if (_data) {
 
 
             var _this = this;
 
-            if (_data.list) {
+            if (_data) {
 
-                angular.forEach(_data.list, function (value, key) {
+                angular.forEach(_data.data.list, function (value, key) {
                     var tempResult;
                     if(_helperObject.getNativeData === true || _helperObject.getNativeData === "true") {
                         tempResult = value;

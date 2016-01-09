@@ -1,11 +1,5 @@
 "use strict";
 
-/**
- @author Jonathan Hornung (https://github.com/JohnnyTheTank)
- @url https://github.com/JohnnyTheTank/apiNG-plugin-dailymotion
- @licence MIT
- */
-
 var jjtApingDailymotion = angular.module("jtt_aping_dailymotion", ['jtt_dailymotion'])
     .directive('apingDailymotion', ['apingDailymotionHelper', 'apingUtilityHelper', 'dailymotionFactory', function (apingDailymotionHelper, apingUtilityHelper, dailymotionFactory) {
         return {
@@ -71,7 +65,7 @@ var jjtApingDailymotion = angular.module("jtt_aping_dailymotion", ['jtt_dailymot
                         }
 
                         dailymotionFactory.getVideosFromUserById(requestObject)
-                            .success(function (_data) {
+                            .then(function (_data) {
                                 if (_data) {
                                     apingController.concatToResults(apingDailymotionHelper.getObjectByJsonData(_data, helperObject));
                                 }
@@ -82,7 +76,7 @@ var jjtApingDailymotion = angular.module("jtt_aping_dailymotion", ['jtt_dailymot
                         requestObject.sort = 'recent';
 
                         dailymotionFactory.getVideosFromChannelById(requestObject)
-                            .success(function (_data) {
+                            .then(function (_data) {
                                 if (_data) {
                                     apingController.concatToResults(apingDailymotionHelper.getObjectByJsonData(_data, helperObject));
                                 }
@@ -93,7 +87,7 @@ var jjtApingDailymotion = angular.module("jtt_aping_dailymotion", ['jtt_dailymot
                         requestObject.sort = 'recent';
 
                         dailymotionFactory.getVideosFromPlaylistById(requestObject)
-                            .success(function (_data) {
+                            .then(function (_data) {
                                 if (_data) {
                                     apingController.concatToResults(apingDailymotionHelper.getObjectByJsonData(_data, helperObject));
                                 }
@@ -113,7 +107,7 @@ var jjtApingDailymotion = angular.module("jtt_aping_dailymotion", ['jtt_dailymot
                         }
 
                         dailymotionFactory.getVideosByParams(requestObject)
-                            .success(function (_data) {
+                            .then(function (_data) {
                                 if (_data) {
                                     apingController.concatToResults(apingDailymotionHelper.getObjectByJsonData(_data, helperObject));
                                 }
