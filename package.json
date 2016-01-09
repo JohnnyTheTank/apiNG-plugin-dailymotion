@@ -1,6 +1,6 @@
 {
   "name": "aping-plugin-dailymotion",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "dailymotion plugin for apiNG",
   "main": "dist/aping-plugin-dailymotion.min.js",
   "scripts": {
@@ -33,6 +33,6 @@
     "angular-dailymotion-api-factory": "*"
   },
   "dependencies": {
-    "apiNG": "*"
+    "aping": "*"
   }
 }

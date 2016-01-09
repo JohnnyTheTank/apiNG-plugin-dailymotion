@@ -1,6 +1,6 @@
 /**
     @name: aping-plugin-dailymotion 
-    @version: 0.7.0 (09-01-2016) 
+    @version: 0.7.1 (09-01-2016) 
     @author: Jonathan Hornung 
     @url: https://github.com/JohnnyTheTank/apiNG-plugin-dailymotion#readme 
     @license: MIT
