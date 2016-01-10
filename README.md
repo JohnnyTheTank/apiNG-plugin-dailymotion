@@ -5,27 +5,29 @@
 
 # Information
 * **Supported apiNG models: `social`, `video`**
+* This plugin supports the [`get-native-data` parameter](https://aping.readme.io/docs/configuration#parameters)
 * Used promise library: [angular-dailymotion-api-factory](https://github.com/JohnnyTheTank/angular-dailymotion-api-factory) _(included in distribution files)_
 
 # Documentation
-    I.  INSTALLATION
-    II. USAGE
+1. [INSTALLATION](#1-installation)
+    1. Get file
+    2. Include file
+    3. Add dependencies
+    4. Add plugin
+2. [USAGE](#2-usage)
+    1. Models
+    2. Requests
 
-## I. INSTALLATION
-    a) Get file
-    b) Include file
-    c) Add dependencies
-    d) Add the plugin
+## 1. INSTALLATION
 
-### a) Get file
-You can choose your preferred method of installation:
+### I. Get file
+Install via either [bower](http://bower.io/), [npm](https://www.npmjs.com/) or downloaded files:
 
-1. Install via either [bower](http://bower.io/), [npm](https://www.npmjs.com/) or downloaded files:
-    1. `bower install apiNG-plugin-dailymotion --save`
-    2. `npm install aping-plugin-dailymotion --save`
-    3. download [apiNG-plugin-dailymotion.zip](https://github.com/JohnnyTheTank/apiNG-plugin-dailymotion/zipball/master)
+* `bower install apiNG-plugin-dailymotion --save`
+* `npm install aping-plugin-dailymotion --save`
+* download [apiNG-plugin-dailymotion.zip](https://github.com/JohnnyTheTank/apiNG-plugin-dailymotion/zipball/master)
 
-### b) Include file
+### II. Include file
 Include `aping-plugin-dailymotion.min.js` in your apiNG application
 
 ```html
@@ -39,14 +41,14 @@ Include `aping-plugin-dailymotion.min.js` in your apiNG application
 <script src="aping-plugin-dailymotion.min.js"></script>
 ```
 
-### c) Add dependencies
+### III. Add dependencies
 Add the module `jtt_aping_dailymotion` as a dependency to your app module:
 ```js
 var app = angular.module('app', ['jtt_aping', 'jtt_aping_dailymotion']);
 ```
 
-### d) Add the plugin
-Add the plugin's directive `aping-dailymotion="[]"` to your apiNG directive and configure your requests (_**II. USAGE**_)
+### IV. Add the plugin
+Add the plugin's directive `aping-dailymotion="[]"` to your apiNG directive and [configure your requests](#ii-requests)
 ```html
 <aping
     template-url="templates/social.html"
@@ -56,11 +58,9 @@ Add the plugin's directive `aping-dailymotion="[]"` to your apiNG directive and 
 </aping>
 ```
 
-## II. USAGE
-    a) Models
-    b) Requests
+## 2. USAGE
 
-### a) Models
+### I. Models
 Supported apiNG models
 
 |  model   | content | support | max items<br>per request | (native) default items<br>per request |
@@ -73,7 +73,7 @@ Supported apiNG models
 * partly: _the source platfrom provides just partly usable results_
 
 
-### b) Requests
+### II. Requests
 Every **apiNG plugin** expects an array of **requests** as html attribute.
 
 #### Requests by User
