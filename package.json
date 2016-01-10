@@ -1,7 +1,7 @@
 {
   "name": "aping-plugin-dailymotion",
-  "version": "0.7.1",
-  "description": "dailymotion plugin for apiNG",
+  "version": "0.7.5",
+  "description": "Dailymotion plugin for apiNG",
   "main": "dist/aping-plugin-dailymotion.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,7 +19,7 @@
     "json",
     "angular"
   ],
-  "author": "Jonathan Hornung",
+  "author": "Jonathan Hornung <jonathan.hornung@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/JohnnyTheTank/apiNG-plugin-dailymotion/issues"

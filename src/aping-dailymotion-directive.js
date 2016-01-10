@@ -18,7 +18,7 @@ var jjtApingDailymotion = angular.module("jtt_aping_dailymotion", ['jtt_dailymot
                     var helperObject = {
                         model: appSettings.model,
                     };
-                    if(typeof appSettings.getNativeData !== "undefined") {
+                    if (typeof appSettings.getNativeData !== "undefined") {
                         helperObject.getNativeData = appSettings.getNativeData;
                     } else {
                         helperObject.getNativeData = false;
@@ -27,40 +27,40 @@ var jjtApingDailymotion = angular.module("jtt_aping_dailymotion", ['jtt_dailymot
                     //create requestObject for api request call
                     var requestObject = {};
 
-                    if(typeof request.items !== "undefined") {
+                    if (typeof request.items !== "undefined") {
                         requestObject.limit = request.items;
                     } else {
                         requestObject.limit = appSettings.items;
                     }
 
-                    if(requestObject.limit == 0) {
+                    if (requestObject.limit == 0) {
                         return false;
                     }
 
                     // -1 is "no explicit limit". same for NaN value
-                    if(requestObject.limit < 0 || isNaN(requestObject.limit)) {
+                    if (requestObject.limit < 0 || isNaN(requestObject.limit)) {
                         requestObject.limit = undefined;
                     }
 
                     // the api has a limit of 100 items per request
-                    if(requestObject.limit > 100) {
+                    if (requestObject.limit > 100) {
                         requestObject.limit = 100;
                     }
 
-                    if(typeof request.search !== "undefined") {
+                    if (typeof request.search !== "undefined") {
                         requestObject.search = request.search;
                     }
 
-                    if(typeof request.tags !== "undefined") {
+                    if (typeof request.tags !== "undefined") {
                         requestObject.tags = request.tags;
                     }
 
-                    if(request.userId) {
+                    if (request.userId) {
 
                         requestObject.id = request.userId;
                         requestObject.sort = 'recent';
 
-                        if(typeof request.channelId !== "undefined") {
+                        if (typeof request.channelId !== "undefined") {
                             requestObject.channel = request.channelId;
                         }
 
@@ -94,15 +94,15 @@ var jjtApingDailymotion = angular.module("jtt_aping_dailymotion", ['jtt_dailymot
                             });
                     } else {
 
-                        if(typeof request.genre !== "undefined") {
+                        if (typeof request.genre !== "undefined") {
                             requestObject.genre = request.genre;
                         }
 
-                        if(typeof request.country !== "undefined") {
+                        if (typeof request.country !== "undefined") {
                             requestObject.country = request.country;
                         }
 
-                        if(typeof request.language !== "undefined") {
+                        if (typeof request.language !== "undefined") {
                             requestObject.detected_language = request.language;
                         }
 

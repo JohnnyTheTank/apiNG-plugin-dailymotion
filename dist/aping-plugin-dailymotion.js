@@ -1,7 +1,7 @@
 /**
     @name: aping-plugin-dailymotion 
-    @version: 0.7.1 (09-01-2016) 
-    @author: Jonathan Hornung 
+    @version: 0.7.5 (10-01-2016) 
+    @author: Jonathan Hornung <jonathan.hornung@gmail.com> 
     @url: https://github.com/JohnnyTheTank/apiNG-plugin-dailymotion#readme 
     @license: MIT
 */
@@ -25,7 +25,7 @@ var jjtApingDailymotion = angular.module("jtt_aping_dailymotion", ['jtt_dailymot
                     var helperObject = {
                         model: appSettings.model,
                     };
-                    if(typeof appSettings.getNativeData !== "undefined") {
+                    if (typeof appSettings.getNativeData !== "undefined") {
                         helperObject.getNativeData = appSettings.getNativeData;
                     } else {
                         helperObject.getNativeData = false;
@@ -34,40 +34,40 @@ var jjtApingDailymotion = angular.module("jtt_aping_dailymotion", ['jtt_dailymot
                     //create requestObject for api request call
                     var requestObject = {};
 
-                    if(typeof request.items !== "undefined") {
+                    if (typeof request.items !== "undefined") {
                         requestObject.limit = request.items;
                     } else {
                         requestObject.limit = appSettings.items;
                     }
 
-                    if(requestObject.limit == 0) {
+                    if (requestObject.limit == 0) {
                         return false;
                     }
 
                     // -1 is "no explicit limit". same for NaN value
-                    if(requestObject.limit < 0 || isNaN(requestObject.limit)) {
+                    if (requestObject.limit < 0 || isNaN(requestObject.limit)) {
                         requestObject.limit = undefined;
                     }
 
                     // the api has a limit of 100 items per request
-                    if(requestObject.limit > 100) {
+                    if (requestObject.limit > 100) {
                         requestObject.limit = 100;
                     }
 
-                    if(typeof request.search !== "undefined") {
+                    if (typeof request.search !== "undefined") {
                         requestObject.search = request.search;
                     }
 
-                    if(typeof request.tags !== "undefined") {
+                    if (typeof request.tags !== "undefined") {
                         requestObject.tags = request.tags;
                     }
 
-                    if(request.userId) {
+                    if (request.userId) {
 
                         requestObject.id = request.userId;
                         requestObject.sort = 'recent';
 
-                        if(typeof request.channelId !== "undefined") {
+                        if (typeof request.channelId !== "undefined") {
                             requestObject.channel = request.channelId;
                         }
 
@@ -101,15 +101,15 @@ var jjtApingDailymotion = angular.module("jtt_aping_dailymotion", ['jtt_dailymot
                             });
                     } else {
 
-                        if(typeof request.genre !== "undefined") {
+                        if (typeof request.genre !== "undefined") {
                             requestObject.genre = request.genre;
                         }
 
-                        if(typeof request.country !== "undefined") {
+                        if (typeof request.country !== "undefined") {
                             requestObject.country = request.country;
                         }
 
-                        if(typeof request.language !== "undefined") {
+                        if (typeof request.language !== "undefined") {
                             requestObject.detected_language = request.language;
                         }
 
@@ -147,12 +147,12 @@ jjtApingDailymotion.service('apingDailymotionHelper', ['apingModels', 'apingTime
 
                 angular.forEach(_data.data.list, function (value, key) {
                     var tempResult;
-                    if(_helperObject.getNativeData === true || _helperObject.getNativeData === "true") {
+                    if (_helperObject.getNativeData === true || _helperObject.getNativeData === "true") {
                         tempResult = value;
                     } else {
                         tempResult = _this.getItemByJsonData(value, _helperObject.model);
                     }
-                    if(tempResult) {
+                    if (tempResult) {
                         requestResults.push(tempResult);
                     }
                 });
@@ -186,7 +186,7 @@ jjtApingDailymotion.service('apingDailymotionHelper', ['apingModels', 'apingTime
         //fill _item in socialObject
         $.extend(true, socialObject, {
             "blog_name": _item['owner.screenname'] || undefined,
-            "blog_id":  _item['owner.id'] || undefined,
+            "blog_id": _item['owner.id'] || undefined,
             "blog_link": _item['owner.url'] || undefined,
             "type": _item.item_type || _item.media_type || undefined,
             "timestamp": _item.created_time * 1000,
@@ -212,7 +212,7 @@ jjtApingDailymotion.service('apingDailymotionHelper', ['apingModels', 'apingTime
         //fill _item in videoObject
         $.extend(true, videoObject, {
             blog_name: _item['owner.screenname'] || undefined,
-            blog_id:  _item['owner.id'] || undefined,
+            blog_id: _item['owner.id'] || undefined,
             blog_link: _item['owner.url'] || undefined,
             type: _item.item_type || _item.media_type || undefined,
             timestamp: _item.created_time * 1000,

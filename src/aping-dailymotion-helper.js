@@ -21,12 +21,12 @@ jjtApingDailymotion.service('apingDailymotionHelper', ['apingModels', 'apingTime
 
                 angular.forEach(_data.data.list, function (value, key) {
                     var tempResult;
-                    if(_helperObject.getNativeData === true || _helperObject.getNativeData === "true") {
+                    if (_helperObject.getNativeData === true || _helperObject.getNativeData === "true") {
                         tempResult = value;
                     } else {
                         tempResult = _this.getItemByJsonData(value, _helperObject.model);
                     }
-                    if(tempResult) {
+                    if (tempResult) {
                         requestResults.push(tempResult);
                     }
                 });
@@ -60,7 +60,7 @@ jjtApingDailymotion.service('apingDailymotionHelper', ['apingModels', 'apingTime
         //fill _item in socialObject
         $.extend(true, socialObject, {
             "blog_name": _item['owner.screenname'] || undefined,
-            "blog_id":  _item['owner.id'] || undefined,
+            "blog_id": _item['owner.id'] || undefined,
             "blog_link": _item['owner.url'] || undefined,
             "type": _item.item_type || _item.media_type || undefined,
             "timestamp": _item.created_time * 1000,
@@ -86,7 +86,7 @@ jjtApingDailymotion.service('apingDailymotionHelper', ['apingModels', 'apingTime
         //fill _item in videoObject
         $.extend(true, videoObject, {
             blog_name: _item['owner.screenname'] || undefined,
-            blog_id:  _item['owner.id'] || undefined,
+            blog_id: _item['owner.id'] || undefined,
             blog_link: _item['owner.url'] || undefined,
             type: _item.item_type || _item.media_type || undefined,
             timestamp: _item.created_time * 1000,
