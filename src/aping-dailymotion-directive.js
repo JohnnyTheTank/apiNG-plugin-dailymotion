@@ -33,7 +33,7 @@ var jjtApingDailymotion = angular.module("jtt_aping_dailymotion", ['jtt_dailymot
                         requestObject.limit = appSettings.items;
                     }
 
-                    if (requestObject.limit == 0) {
+                    if (requestObject.count === 0 || requestObject.count === '0') {
                         return false;
                     }
 
