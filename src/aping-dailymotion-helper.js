@@ -14,7 +14,6 @@ jjtApingDailymotion.service('apingDailymotionHelper', ['apingModels', 'apingTime
         var requestResults = [];
         if (_data) {
 
-
             var _this = this;
 
             if (_data) {
@@ -31,7 +30,6 @@ jjtApingDailymotion.service('apingDailymotionHelper', ['apingModels', 'apingTime
                     }
                 });
             }
-
         }
         return requestResults;
     };
@@ -57,7 +55,6 @@ jjtApingDailymotion.service('apingDailymotionHelper', ['apingModels', 'apingTime
     this.getSocialItemByJsonData = function (_item) {
         var socialObject = apingModels.getNew("social", this.getThisPlattformString());
 
-        //fill _item in socialObject
         $.extend(true, socialObject, {
             "blog_name": _item['owner.screenname'] || undefined,
             "blog_id": _item['owner.id'] || undefined,
@@ -67,7 +64,6 @@ jjtApingDailymotion.service('apingDailymotionHelper', ['apingModels', 'apingTime
             "source": _item.embed_html || undefined,
             "post_url": _item.url,
             "intern_id": _item.id,
-            //"text": _item.description.replace(/<(?:.|\n)*?>/gm, ''),
             "text": apingUtilityHelper.getTextFromHtml(_item.description),
             "caption": _item.title,
             "img_url": _item.thumbnail_url,
@@ -83,7 +79,6 @@ jjtApingDailymotion.service('apingDailymotionHelper', ['apingModels', 'apingTime
     this.getVideoItemByJsonData = function (_item) {
         var videoObject = apingModels.getNew("video", this.getThisPlattformString());
 
-        //fill _item in videoObject
         $.extend(true, videoObject, {
             blog_name: _item['owner.screenname'] || undefined,
             blog_id: _item['owner.id'] || undefined,
