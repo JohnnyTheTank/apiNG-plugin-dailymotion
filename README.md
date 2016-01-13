@@ -1,18 +1,21 @@
 [logo]: http://aping.io/logo/320/aping-plugin.png "apiNG Plugin"
 ![apiNG][logo]
 
+[![npm version](https://badge.fury.io/js/aping-plugin-dailymotion.png)](https://badge.fury.io/js/aping-plugin-dailymotion)
+[![Bower version](https://badge.fury.io/bo/apiNG-plugin-dailymotion.png)](https://badge.fury.io/bo/apiNG-plugin-dailymotion)
+
 **_apiNG-plugin-dailymotion_** is a [Dailymotion Data API](https://developer.dailymotion.com/api) plugin for [**apiNG**](https://github.com/JohnnyTheTank/apiNG).
 
 # Information
 * **Supported apiNG models: `social`, `video`**
-* This plugin supports the [`get-native-data` parameter](https://aping.readme.io/docs/configuration#parameters)
+* This plugin supports the [`get-native-data` parameter](https://aping.readme.io/docs/advanced#parameters)
 * Used promise library: [angular-dailymotion-api-factory](https://github.com/JohnnyTheTank/angular-dailymotion-api-factory) _(included in distribution files)_
 
 # Documentation
 1. [INSTALLATION](#1-installation)
     1. Get file
     2. Include file
-    3. Add dependencies
+    3. Add dependency
     4. Add plugin
 2. [USAGE](#2-usage)
     1. Models
@@ -41,7 +44,7 @@ Include `aping-plugin-dailymotion.min.js` in your apiNG application
 <script src="aping-plugin-dailymotion.min.js"></script>
 ```
 
-### III. Add dependencies
+### III. Add dependency
 Add the module `jtt_aping_dailymotion` as a dependency to your app module:
 ```js
 var app = angular.module('app', ['jtt_aping', 'jtt_aping_dailymotion']);
