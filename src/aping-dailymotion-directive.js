@@ -1,6 +1,6 @@
 "use strict";
 
-var jjtApingDailymotion = angular.module("jtt_aping_dailymotion", ['jtt_dailymotion'])
+angular.module("jtt_aping_dailymotion", ['jtt_dailymotion'])
     .directive('apingDailymotion', ['apingDailymotionHelper', 'apingUtilityHelper', 'dailymotionFactory', function (apingDailymotionHelper, apingUtilityHelper, dailymotionFactory) {
         return {
             require: '?aping',
