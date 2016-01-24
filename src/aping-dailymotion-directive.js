@@ -24,6 +24,11 @@ angular.module("jtt_aping_dailymotion", ['jtt_dailymotion'])
                         helperObject.getNativeData = false;
                     }
 
+                    if (request.protocol === "http" || request.protocol === "https") {
+                        helperObject.protocol = request.protocol + "://";
+                    }
+
+
                     //create requestObject for api request call
                     var requestObject = {};
 

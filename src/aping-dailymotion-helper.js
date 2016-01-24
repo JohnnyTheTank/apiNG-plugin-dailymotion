@@ -24,7 +24,7 @@ angular.module("jtt_aping_dailymotion")
                         if (_helperObject.getNativeData === true || _helperObject.getNativeData === "true") {
                             tempResult = value;
                         } else {
-                            tempResult = _this.getItemByJsonData(value, _helperObject.model);
+                            tempResult = _this.getItemByJsonData(value, _helperObject);
                         }
                         if (tempResult) {
                             requestResults.push(tempResult);
@@ -35,15 +35,15 @@ angular.module("jtt_aping_dailymotion")
             return requestResults;
         };
 
-        this.getItemByJsonData = function (_item, _model) {
+        this.getItemByJsonData = function (_item, _helperObject) {
             var returnObject = {};
-            if (_item && _model) {
-                switch (_model) {
+            if (_item && _helperObject.model) {
+                switch (_helperObject.model) {
                     case "social":
                         returnObject = this.getSocialItemByJsonData(_item);
                         break;
                     case "video":
-                        returnObject = this.getVideoItemByJsonData(_item);
+                        returnObject = this.getVideoItemByJsonData(_item, _helperObject);
                         break;
 
                     default:
@@ -77,7 +77,7 @@ angular.module("jtt_aping_dailymotion")
             return socialObject;
         };
 
-        this.getVideoItemByJsonData = function (_item) {
+        this.getVideoItemByJsonData = function (_item, _helperObject) {
             var videoObject = apingModels.getNew("video", this.getThisPlattformString());
 
             $.extend(true, videoObject, {
@@ -96,6 +96,10 @@ angular.module("jtt_aping_dailymotion")
                 comments: _item.comments_total,
                 duration: _item.duration, // in seconds
             });
+
+            if(_helperObject.protocol) {
+                videoObject.markup = videoObject.markup.replace('src=\"//', 'src=\"'+_helperObject.protocol);
+            }
 
             videoObject.date_time = new Date(videoObject.timestamp);
 
