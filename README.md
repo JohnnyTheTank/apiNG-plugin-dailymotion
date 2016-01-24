@@ -91,6 +91,8 @@ Every **apiNG plugin** expects an array of **requests** as html attribute.
 | **`tags`**  | `hiphop,rap` |   | Limit the result set to this full text search of video tags |  yes  |
 | **`channelId`**  | `music` |   | Limit the result set to this channel ([Browse channels](http://www.dailymotion.com/browse)) |  yes  |
 | **`items`**  | `25` | `10` | Items per request (`0`-`100`) |  yes  |
+| **`protocol`**  | `https` |  | Use `https` or `http` to force the protocol. Leave it blank to for dynamic choice. Works only for model `video` |  yes  |
+
 
 Sample requests:
 * `[{'userId':'lolaflips'}, {'userId':'thepetcollective'}]`
@@ -103,6 +105,7 @@ Sample requests:
 | **`search`**  | `eminem` |   | Limit the result set to this full text search |  yes  |
 | **`tags`**  | `hiphop,rap` |   | Limit the result set to this full text search of video tags |  yes  |
 | **`items`**  | `25` | `10` | Items per request (`0`-`100`) |  yes  |
+| **`protocol`**  | `https` |  | Use `https` or `http` to force the protocol. Leave it blank to for dynamic choice. Works only for model `video` |  yes  |
 
 Sample requests:
 * `[{'channelId':'music'}]`
@@ -114,6 +117,7 @@ Sample requests:
 | **`search`**  | `eminem` |   | Limit the result set to this full text search |  yes  |
 | **`tags`**  | `hiphop,rap` |   | Limit the result set to this full text search of video tags |  yes  |
 | **`items`**  | `25` | `10` | Items per request (`0`-`100`) |  yes  |
+| **`protocol`**  | `https` |  | Use `https` or `http` to force the protocol. Leave it blank to for dynamic choice. Works only for model `video` |  yes  |
 
 Sample requests:
 * `[{'channelId':'x439f7_brtvofficial_br-highlights-september'}]`
@@ -127,6 +131,7 @@ Sample requests:
 | **`country`**  | `us` |   | Limit the result set to this country (declarative) |  yes  |
 | **`language`**  | `en` |   | Limit the result set to this language |  yes  |
 | **`items`**  | `25` | `10` | Items per request (`0`-`100`) |  yes  |
+| **`protocol`**  | `https` |  | Use `https` or `http` to force the protocol. Leave it blank to for dynamic choice. Works only for model `video` |  yes  |
 
 Sample requests:
 * `[{'search':'adele'}]`
@@ -141,6 +146,7 @@ Sample requests:
 | **`country`**  | `us` |   | Limit the result set to this country (declarative) |  yes  |
 | **`language`**  | `en` |   | Limit the result set to this language |  yes  |
 | **`items`**  | `25` | `10` | Items per request (`0`-`100`) |  yes  |
+| **`protocol`**  | `https` |  | Use `https` or `http` to force the protocol. Leave it blank to for dynamic choice. Works only for model `video` |  yes  |
 
 Sample requests:
 * `[{'tags':'soccer'}]`
