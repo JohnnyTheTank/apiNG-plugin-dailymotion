@@ -120,7 +120,7 @@ Sample requests:
 | **`protocol`**  | `https` |  | Use `https` or `http` to force the protocol. Leave it blank to for dynamic choice. Works only for model `video` |  yes  |
 
 Sample requests:
-* `[{'channelId':'x439f7_brtvofficial_br-highlights-september'}]`
+* `[{'playlistId':'x439f7_brtvofficial_br-highlights-september'}]`
 
 #### Requests by Search
 |  parameter  | sample | default | description | optional |
