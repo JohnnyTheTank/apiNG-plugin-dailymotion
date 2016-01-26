@@ -1,6 +1,6 @@
 /**
     @name: aping-plugin-dailymotion 
-    @version: 0.7.7 (24-01-2016) 
+    @version: 0.7.8 (26-01-2016) 
     @author: Jonathan Hornung <jonathan.hornung@gmail.com> 
     @url: https://github.com/JohnnyTheTank/apiNG-plugin-dailymotion#readme 
     @license: MIT
@@ -188,19 +188,21 @@ angular.module("jtt_aping_dailymotion")
             var socialObject = apingModels.getNew("social", this.getThisPlattformString());
 
             $.extend(true, socialObject, {
-                "blog_name": _item['owner.screenname'] || undefined,
-                "blog_id": _item['owner.id'] || undefined,
-                "blog_link": _item['owner.url'] || undefined,
-                "type": _item.item_type || _item.media_type || undefined,
-                "timestamp": _item.created_time * 1000,
-                "source": _item.embed_html || undefined,
-                "post_url": _item.url,
-                "intern_id": _item.id,
-                "text": apingUtilityHelper.getTextFromHtml(_item.description),
-                "caption": _item.title,
-                "img_url": _item.thumbnail_url,
-                "likes": _item.bookmarks_total,
-                "comments": _item.comments_total,
+                blog_name: _item['owner.screenname'] || undefined,
+                blog_id: _item['owner.id'] || undefined,
+                blog_link: _item['owner.url'] || undefined,
+                type: _item.item_type || _item.media_type || undefined,
+                timestamp: _item.created_time * 1000,
+                source: _item.embed_html || undefined,
+                post_url: _item.url,
+                intern_id: _item.id,
+                text: apingUtilityHelper.getTextFromHtml(_item.description),
+                caption: _item.title,
+                img_url: _item.thumbnail_720_url,
+                thumb_url: _item.thumbnail_240_url,
+                native_url: _item.thumbnail_url,
+                likes: _item.bookmarks_total,
+                comments: _item.comments_total,
             });
 
             socialObject.date_time = new Date(socialObject.timestamp);
@@ -222,14 +224,16 @@ angular.module("jtt_aping_dailymotion")
                 intern_id: _item.id,
                 text: apingUtilityHelper.getTextFromHtml(_item.description),
                 caption: _item.title,
-                img_url: _item.thumbnail_url,
+                img_url: _item.thumbnail_720_url,
+                thumb_url: _item.thumbnail_240_url,
+                native_url: _item.thumbnail_url,
                 likes: _item.bookmarks_total,
                 comments: _item.comments_total,
                 duration: _item.duration, // in seconds
             });
 
-            if(_helperObject.protocol) {
-                videoObject.markup = videoObject.markup.replace('src=\"//', 'src=\"'+_helperObject.protocol);
+            if (_helperObject.protocol) {
+                videoObject.markup = videoObject.markup.replace('src=\"//', 'src=\"' + _helperObject.protocol);
             }
 
             videoObject.date_time = new Date(videoObject.timestamp);
@@ -331,7 +335,7 @@ angular.module("jtt_dailymotion", [])
             switch (_type) {
 
                 case "videosFromUserById":
-                    dailymotionSearchData.object.fields = 'bookmarks_total,comments_total,created_time,description,duration,embed_html,id,item_type,media_type,owner.id,owner.screenname,owner.url,thumbnail_url,title,updated_time,url,';
+                    dailymotionSearchData.object.fields = 'bookmarks_total,comments_total,created_time,description,duration,embed_html,id,item_type,media_type,owner.id,owner.screenname,owner.url,thumbnail_240_url,thumbnail_720_url,thumbnail_url,title,updated_time,url,';
 
                     dailymotionSearchData = this.fillDataInObjectByList(dailymotionSearchData, _params, [
                         'fields', 'channel', 'created_after', 'created_before', 'genre', 'nogenre', 'page', 'limit', 'search', 'tags'
@@ -341,7 +345,7 @@ angular.module("jtt_dailymotion", [])
                     break;
 
                 case "videosFromChannelById":
-                    dailymotionSearchData.object.fields = 'bookmarks_total,comments_total,created_time,description,duration,embed_html,id,item_type,media_type,owner.id,owner.screenname,owner.url,thumbnail_url,title,updated_time,url,';
+                    dailymotionSearchData.object.fields = 'bookmarks_total,comments_total,created_time,description,duration,embed_html,id,item_type,media_type,owner.id,owner.screenname,owner.url,thumbnail_240_url,thumbnail_720_url,thumbnail_url,title,updated_time,url,';
 
                     dailymotionSearchData = this.fillDataInObjectByList(dailymotionSearchData, _params, [
                         'fields', 'channel', 'created_after', 'created_before', 'search', 'sort', 'tags', 'page', 'limit',
@@ -351,7 +355,7 @@ angular.module("jtt_dailymotion", [])
                     break;
 
                 case "videosFromPlaylistById":
-                    dailymotionSearchData.object.fields = 'bookmarks_total,comments_total,created_time,description,duration,embed_html,id,item_type,media_type,owner.id,owner.screenname,owner.url,thumbnail_url,title,updated_time,url,';
+                    dailymotionSearchData.object.fields = 'bookmarks_total,comments_total,created_time,description,duration,embed_html,id,item_type,media_type,owner.id,owner.screenname,owner.url,thumbnail_240_url,thumbnail_720_url,thumbnail_url,title,updated_time,url,';
 
                     dailymotionSearchData = this.fillDataInObjectByList(dailymotionSearchData, _params, [
                         'fields', 'search', 'sort', 'tags', 'page', 'limit',
@@ -361,7 +365,7 @@ angular.module("jtt_dailymotion", [])
                     break;
 
                 case "videosByParams":
-                    dailymotionSearchData.object.fields = 'bookmarks_total,comments_total,created_time,description,duration,embed_html,id,item_type,media_type,owner.id,owner.screenname,owner.url,thumbnail_url,title,updated_time,url,';
+                    dailymotionSearchData.object.fields = 'bookmarks_total,comments_total,created_time,description,duration,embed_html,id,item_type,media_type,owner.id,owner.screenname,owner.url,thumbnail_240_url,thumbnail_720_url,thumbnail_url,title,updated_time,url,';
 
                     dailymotionSearchData = this.fillDataInObjectByList(dailymotionSearchData, _params, [
                         'fields', 'channel', 'country', 'created_after', 'created_before', 'detected_language', 'exclude_ids', 'featured', 'genre', 'has_game', 'hd', 'ids', 'in_history', 'languages', 'list', 'live', 'live_offair', 'live_onair', 'live_upcoming', 'longer_than', 'no_live', 'no_premium', 'nogenre', 'owners', 'partner', 'poster', 'premium', 'private', 'search', 'shorter_than', 'sort', 'svod', 'tags', 'tvod', 'ugc', 'verified', 'page', 'limit'
