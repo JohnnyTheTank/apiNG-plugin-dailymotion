@@ -56,7 +56,7 @@ angular.module("jtt_aping_dailymotion")
         this.getSocialItemByJsonData = function (_item) {
             var socialObject = apingModels.getNew("social", this.getThisPlattformString());
 
-            $.extend(true, socialObject, {
+            angular.extend(socialObject, {
                 blog_name: _item['owner.screenname'] || undefined,
                 blog_id: _item['owner.id'] || undefined,
                 blog_link: _item['owner.url'] || undefined,
@@ -82,7 +82,7 @@ angular.module("jtt_aping_dailymotion")
         this.getVideoItemByJsonData = function (_item, _helperObject) {
             var videoObject = apingModels.getNew("video", this.getThisPlattformString());
 
-            $.extend(true, videoObject, {
+            angular.extend(videoObject, {
                 blog_name: _item['owner.screenname'] || undefined,
                 blog_id: _item['owner.id'] || undefined,
                 blog_link: _item['owner.url'] || undefined,
