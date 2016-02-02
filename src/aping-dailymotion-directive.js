@@ -18,7 +18,8 @@ angular.module("jtt_aping_dailymotion", ['jtt_dailymotion'])
                     var helperObject = {
                         model: appSettings.model,
                     };
-                    if (typeof appSettings.getNativeData !== "undefined") {
+
+                    if (angular.isDefined(appSettings.getNativeData)) {
                         helperObject.getNativeData = appSettings.getNativeData;
                     } else {
                         helperObject.getNativeData = false;
@@ -32,7 +33,7 @@ angular.module("jtt_aping_dailymotion", ['jtt_dailymotion'])
                     //create requestObject for api request call
                     var requestObject = {};
 
-                    if (typeof request.items !== "undefined") {
+                    if (angular.isDefined(request.items)) {
                         requestObject.limit = request.items;
                     } else {
                         requestObject.limit = appSettings.items;
@@ -52,11 +53,11 @@ angular.module("jtt_aping_dailymotion", ['jtt_dailymotion'])
                         requestObject.limit = 100;
                     }
 
-                    if (typeof request.search !== "undefined") {
+                    if (angular.isDefined(request.search)) {
                         requestObject.search = request.search;
                     }
 
-                    if (typeof request.tags !== "undefined") {
+                    if (angular.isDefined(request.tags)) {
                         requestObject.tags = request.tags;
                     }
 
@@ -65,7 +66,7 @@ angular.module("jtt_aping_dailymotion", ['jtt_dailymotion'])
                         requestObject.id = request.userId;
                         requestObject.sort = 'recent';
 
-                        if (typeof request.channelId !== "undefined") {
+                        if (angular.isDefined(request.channelId)) {
                             requestObject.channel = request.channelId;
                         }
 
@@ -99,15 +100,15 @@ angular.module("jtt_aping_dailymotion", ['jtt_dailymotion'])
                             });
                     } else {
 
-                        if (typeof request.genre !== "undefined") {
+                        if (angular.isDefined(request.genre)) {
                             requestObject.genre = request.genre;
                         }
 
-                        if (typeof request.country !== "undefined") {
+                        if (angular.isDefined(request.country)) {
                             requestObject.country = request.country;
                         }
 
-                        if (typeof request.language !== "undefined") {
+                        if (angular.isDefined(request.language)) {
                             requestObject.detected_language = request.language;
                         }
 
