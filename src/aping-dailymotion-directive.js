@@ -27,8 +27,11 @@ angular.module("jtt_aping_dailymotion", ['jtt_dailymotion'])
 
                     if (request.protocol === "http" || request.protocol === "https") {
                         helperObject.protocol = request.protocol + "://";
+                    } else  if (appSettings.protocol === "http" || appSettings.protocol === "https") {
+                        helperObject.protocol = appSettings.protocol + "://";
+                    } else {
+                        helperObject.protocol = "//";
                     }
-
 
                     //create requestObject for api request call
                     var requestObject = {};
