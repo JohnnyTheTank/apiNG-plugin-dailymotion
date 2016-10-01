@@ -2,8 +2,8 @@
 ![apiNG][logo]
 
 [![Join the chat at https://gitter.im/JohnnyTheTank/apiNG](https://img.shields.io/badge/GITTER-join%20chat-green.svg)](https://gitter.im/JohnnyTheTank/apiNG?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![npm version](https://badge.fury.io/js/aping-plugin-dailymotion.png)](https://badge.fury.io/js/aping-plugin-dailymotion)
-[![Bower version](https://badge.fury.io/bo/apiNG-plugin-dailymotion.png)](https://badge.fury.io/bo/apiNG-plugin-dailymotion)
+[![npm version](https://badge.fury.io/js/aping-plugin-dailymotion.svg)](https://badge.fury.io/js/aping-plugin-dailymotion)
+[![Bower version](https://badge.fury.io/bo/apiNG-plugin-dailymotion.svg)](https://badge.fury.io/bo/apiNG-plugin-dailymotion)
 
 **_apiNG-plugin-dailymotion_** is a [Dailymotion Data API](https://developer.dailymotion.com/api) plugin for [**apiNG**](https://github.com/JohnnyTheTank/apiNG).
 
