@@ -43,7 +43,7 @@ Include `aping-plugin-dailymotion.min.js` in your apiNG application
 <script src="node_modules/aping-plugin-dailymotion/dist/aping-plugin-dailymotion.min.js"></script>
 
 <!-- when using cdn file -->
-<script src="//cdn.jsdelivr.net/aping.plugin-dailymotion/latest/aping-plugin-dailymotion.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/aping-plugin-dailymotion@latest/dist/aping-plugin-dailymotion.min.js"></script>
 
 <!-- when using downloaded files -->
 <script src="aping-plugin-dailymotion.min.js"></script>
